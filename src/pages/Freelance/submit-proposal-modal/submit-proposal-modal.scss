@@ -1,0 +1,44 @@
+page-submit-proposal-modal {
+    .fr-button{
+        
+         font-size: 17px !important;
+         text-transform: none;
+      }
+      .no-padding{
+      
+          margin-right: -16px;
+          margin-left: -16px;
+          margin-bottom: -40px;
+          padding: 0px !important;
+      }
+      ion-icon {
+          font-size: 40px;  
+      }
+      .ion-icon-requirements{
+          font-size: 40px;
+          color:#3a9aa5;
+      }
+      ion-col {
+          text-align: center;
+      }
+      
+      .icons-title{
+         font-size: 15px;
+         font-weight: bold;
+      }
+      .icon-about{
+          font-size: 17px;
+      }
+      .hr {
+          border-bottom: 1px solid #ccc;
+          margin: 10px 0;
+          width: 100%;
+        }
+        .my-input{
+            height: 40px;
+            width: 320px;
+            font-size: 15px;
+            border: none;
+            margin-left: 10px;
+        }
+}

@@ -1,0 +1,89 @@
+<!--
+  Generated template for the EquipmentDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  
+    <ion-navbar>
+      <ion-title>Freelance Job Details</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+
+    
+        <h3 style="color:#017583;">{{ freelanceJob?.title }}</h3>
+        <span>   <ion-icon  class="icon-about" name="calendar"></ion-icon>
+          Posted On : <strong>{{freelanceJob?.date}}</strong> </span> <br>
+      
+        <div class="no-padding">
+        <button ion-button icon-start full class="fr-button" color="easy-mission-color" large (click)="openModal(freelanceJob.id)">
+          <ion-icon name='briefcase' is-active="false"></ion-icon>
+          Submit a Proposal
+        </button><br>
+      
+  
+    </div>
+     
+       <span> Category : </span><ion-badge style="background-color:rgba(128, 122, 122, 0.904);" item-right>{{ freelanceJob?.category }}</ion-badge>
+       <div class="hr"> </div>
+       <ion-grid>
+        <ion-row>
+          <ion-col col-6>
+              <ion-icon class="ion-icon-requirements" name="stats"></ion-icon><br>
+              <span class="icons-title">{{ freelanceJob?.freelancerLevel}}</span><br>
+           <span>Freelancer Level</span>
+          </ion-col>
+          <ion-col col-6>   
+            <ion-icon class="ion-icon-requirements" ios="ios-clock" md="md-clock"></ion-icon><br>
+            <span class="icons-title">{{ freelanceJob?.projectLength}}</span><br> 
+            <span>Project Length</span>
+           </ion-col>
+        </ion-row>
+      </ion-grid>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6>
+            <ion-icon class="ion-icon-requirements" name="logo-usd"></ion-icon><br>
+            <span class="icons-title"> {{ freelanceJob?.salary}}</span><br> 
+          <span>Est. Budget</span>
+        </ion-col>
+        <ion-col col-6>
+            <ion-icon class="ion-icon-requirements" name="body"></ion-icon><br>
+            <span class="icons-title">{{ freelanceJob?.freelancersNumber}}</span><br> 
+            <span>Number of Freelancers</span>
+          </ion-col>
+      </ion-row>
+    </ion-grid>
+    <div class="hr"> </div>
+    <span class="icons-title">Description of work : </span>
+          <p>{{freelanceJob?.description}}</p>  
+          <ion-label>Accepted freelancers : {{freelanceJob?.capacity}}</ion-label> 
+       <!-- <ion-item>
+        <ion-label>Price</ion-label>
+        <ion-badge item-right>{{ accomodation?.price }}</ion-badge>
+      </ion-item> -->
+      <div class="hr"> </div>
+      <ion-label>  
+        <strong>About the client  </strong><ion-icon class="icon-about" name="information-circle"></ion-icon> </ion-label>
+        <ion-avatar item-start>
+            <ion-icon name="person"></ion-icon> <span class="name-client">&nbsp;&nbsp;{{freelanceJob?.user?.firstname}} {{freelanceJob?.user?.lastname}}</span> <br>
+            <span>Email : {{freelanceJob?.user?.mail}}</span>
+          </ion-avatar>
+       
+
+      
+      
+
+      <ion-label>Tel number : </ion-label>
+      <p>{{freelanceJob?.user?.phone}}</p>  
+   
+   
+  </ion-content>
+
+  
+  

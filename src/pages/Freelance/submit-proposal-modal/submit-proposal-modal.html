@@ -1,0 +1,105 @@
+<!--
+  Generated template for the SubmitProposalModalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Submit Your Proposal
+    </ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <span ion-text color="primary" showWhen="ios">Cancel</span>
+        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form (ngSubmit)="addProposal(formSubmitProposal)" [formGroup]="formSubmitProposal">
+   
+        
+        <h4 style="color:#017583;">Freelance Job Details</h4>
+        <div class="hr"> </div>
+        <div [ngClass]="displayFieldCss('coverLetter')">
+            <strong>{{freelanceJob?.title}}</strong>
+           <p> {{freelanceJob?.description}}</p>
+          
+        </div>
+        <div class="hr"> </div>
+       
+        <h4 style="color:#017583;">Proposal Details</h4>
+        <div [ngClass]="displayFieldCss('freelancerBudget')">
+            <h5>What is the amount you'd like to bid for this job?</h5>
+            <div class="hr"> </div>
+            
+           
+            <strong >Hourly Rate</strong><br>
+            <span>Total amount the client will see on your proposal.</span>
+                <ion-item>
+                   
+                    <ion-input  type="text" formControlName="freelancerBudget" 
+                    id="freelancerBudget" placeholder="/HR"
+                    (change)="feesClick()" ></ion-input>
+                                      </ion-item>
+                <p></p>
+            
+            <page-field-error-display 
+            [displayError]="isFieldValid('freelancerBudget')" 
+            *ngIf="freelancerBudget?.errors?.required"
+             errorMsg="This field is required">
+          </page-field-error-display>
+          <page-field-error-display 
+          [displayError]="isFieldValid('freelancerBudget')" 
+          *ngIf="freelancerBudget?.errors?.pattern"
+          errorMsg="Please enter a value between $1.00 and $999.00" >
+        </page-field-error-display>
+    </div>
+
+          <span>20% EasyMission Service Fee</span>
+          <p></p>
+          <input class="my-input" disabled type="text" id="fees" placeholder="/HR" /><br>
+        <p></p>
+                <span>You'll receive after fees.</span>
+                <p></p>
+                <input type="text" disabled class="my-input" formControlName="paid" id="paid" placeholder="/HR" value="" (change)="fees2Click()"/>
+          
+                <p></p>
+       
+        <div [ngClass]="displayFieldCss('coverLetter')">
+            <ion-item>
+              <ion-label for="coverLetter">Cover Letter</ion-label>
+                <ion-textarea formControlName="coverLetter" id="coverLetter" type="text" class="form-control" placeholder="Write description here..."></ion-textarea>
+              </ion-item>
+            <page-field-error-display 
+            [displayError]="isFieldValid('coverLetter')" 
+            *ngIf="coverLetter?.errors?.required"
+            errorMsg="This field is required" >
+          </page-field-error-display>
+            <page-field-error-display 
+            [displayError]="isFieldValid('coverLetter')" 
+            *ngIf="coverLetter?.errors?.maxlength"
+            errorMsg="Max length should be {{coverLetter?.errors?.maxlength?.requiredLength}} characters" >
+          </page-field-error-display>
+          <p>{{500 - coverLetter.value.length}} characters left</p>
+        </div>
+        
+        <button type="button" ion-button icon-start class="fr-button" color="easy-mission-color" (click)="open()">
+          <ion-icon name='briefcase' is-active="false"></ion-icon>
+         Choose File
+        </button>
+        <div class="no-padding">
+            <button ion-button icon-start full class="fr-button" color="easy-mission-color" large type="Submit"  
+             [disabled]="!formSubmitProposal.valid">
+              <ion-icon name='briefcase' is-active="false"></ion-icon>
+              Submit Proposal
+            </button>
+        </div>
+   
+  </form>
+ 
+    
+</ion-content>

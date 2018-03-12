@@ -1,3 +1,6 @@
+import { SubmitProposalModalPage } from './../pages/Freelance/submit-proposal-modal/submit-proposal-modal';
+import { FreelanceJobDetailsPage } from './../pages/Freelance/freelance-job-details/freelance-job-details';
+import { HomeFreelancePage } from './../pages/Freelance/home-freelance/home-freelance';
 import { RegisterPage } from './../pages/User/register/register';
 import { LoginPage } from './../pages/User/login/login';
 import { Component, ViewChild } from '@angular/core';
@@ -33,6 +36,7 @@ export class MyApp {
       { title: 'Hello Ionic', component: HelloIonicPage },
       { title: 'Login', component: LoginPage },
       { title: 'Register', component: RegisterPage },
+      { title: 'Freelance Home', component: HomeFreelancePage }
     ];
   }
 
